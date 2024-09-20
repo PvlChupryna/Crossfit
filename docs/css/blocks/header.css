@@ -1,0 +1,99 @@
+.header-logo{
+    flex-shrink: 0;
+  }
+  .header{
+    background-color: var(--color-dark-alternate);
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    column-gap: 20px;
+    padding-inline: 32px;
+    min-height: var(--header-height);
+  }
+  .header-menu-list{
+    flex-wrap: wrap;
+    display: flex;
+    column-gap: 50px;
+  }
+  .header-menu-link{
+    display:inline-flex;
+    align-items: center;
+    column-gap: 7px;
+    height: var(--header-height);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+  }
+  .header-menu-link.is-current::after{
+    content: "";
+    width: 5px;
+    aspect-ratio: 1;
+    background-color: currentColor;
+    border-radius: 50%;
+  }
+  .header-actions{
+    display: flex;
+    column-gap: 40px;
+  }
+  .button:hover{
+    background-color: var(--color-light-gray);
+  }
+  .header-burger-button{
+    display: inline-flex;
+    flex-direction: column;
+    padding-left: 7.5px;
+    row-gap: 4px;
+    justify-content: center;
+    width: 40px;
+    aspect-ratio: 1;
+    color: var(--color-light);
+    background-color: transparent;
+    border: var(--border);
+    border-radius: 50%;
+  }
+  .header-burger-button-line{
+    width: 7px;
+    height: 1px;
+    background-color: currentColor;
+    box-shadow: 16px 0 0 currentColor;
+  }
+  .header-burger-button:hover{
+    color: var(--color-light-gray);
+    border-color: currentColor;
+  }
+  
+@media (max-width: 900px){
+    .header{
+        padding-top: 15px;
+        row-gap: 10px;
+        
+        flex-wrap: wrap;
+    }
+    .header-menu{
+        flex-basis: 100%;
+        order: 1;
+    }
+    .header-menu-link{
+      height: 50px;  
+    }
+  }
+  
+  @media (max-width: 767px){
+      .button{
+          padding-inline: 18px;
+      }
+      .header-menu-list{
+          column-gap: 24px;
+      }
+      .header{
+          padding-top: 10px;
+      }
+      .header-menu-link{
+          height: 32px;
+      }
+      .header-actions{
+          column-gap:15px ;
+      }
+  }

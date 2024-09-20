@@ -1,0 +1,127 @@
+
+.motivation-item:nth-child(even){
+    background-color: var(--color-dark-alternate);
+}
+
+.motivation-card{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    column-gap: clamp(30px, 10.42vw, 200px);
+    /* column-gap: 20%; */
+}
+.motivation-card-body{
+    padding-left: 35px;
+}
+ 
+.motivation-item:nth-child(even) 
+.motivation-card{
+    flex-direction: row-reverse;
+}
+.motivation-card-image{
+    margin-block: -50px;
+}
+.backdrop-title{
+    position: relative;
+    z-index: 2;
+}
+.backdrop-title::before{
+    content: '';
+    /* display: block; */
+    width: 26px;
+    aspect-ratio: 1;
+    position: absolute;
+    background-image: url(../../icons/plus.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    right: calc(100% + 8px);
+}
+.backdrop-title::after{
+    display: block;
+    font-family: var(--font-family-accent);
+    content: attr(data-title);
+    position: absolute;
+    z-index: -1;
+    top: -0.3em;
+    left: -0.6em;
+    font-size: 2.8em;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-light-gray);
+    text-stroke: 1px var(--color-light-gray);
+    
+}
+.motivation-card-description{
+    max-width: 400px;
+}
+.motivation-card-title:not(:last-child){
+    margin-bottom: 14px;
+}
+.motivation-card-description:not(:last-child){
+    margin-bottom: 35px;
+}
+.button.motivation{
+    
+}
+.button.transparent{
+    height: 54px;
+    position: relative;
+    padding-left: 31px;
+    padding-right: 80px;
+    color: var(--color-light);
+    background-color: transparent;
+    border: var(--border);
+}
+.button.transparent::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    aspect-ratio: 1;
+    background: url(../../icons/arrow-top-right.svg);
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    border: var(--border);
+    border-radius: 50%;
+    right: 0%;
+
+}
+.button.transparent:hover{
+    color: var(--color-dark);
+    background-color: var(--color-light-gray);
+}
+
+@media(max-width: 1919px){
+    .motivation-card-image{
+        margin-block: -20px;
+    }
+}
+@media(max-width: 1024px){
+    .motivation-card-image{
+        max-width: 30%;
+        height: auto;
+        margin-block: 0;
+    }
+    .motivation-card{
+        padding-block: 50px;
+    }
+}
+@media(max-width:767px){
+    .motivation-card,
+    .motivation-item:nth-child(even) 
+    .motivation-card{
+        flex-direction: column-reverse;
+    }
+    .motivation-card-image{
+        max-width: 60%;
+    }
+    .motivation-card{
+        padding-block: 30px;
+        row-gap: 30px;
+    }/*
+    .motivation-card-description:not(:last-child){
+        margin-bottom: 20px;
+        
+    } */
+}
