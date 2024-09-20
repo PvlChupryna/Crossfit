@@ -137,3 +137,6 @@ svg *[stroke] {stroke;:currentColor}
         margin-bottom: 40px;
     }
 }
+body {
+    overflow-x: hidden;
+}
